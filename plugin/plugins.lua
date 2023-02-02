@@ -16,12 +16,11 @@ return require('packer').startup(function(use)
 
 	-- Color scheme
 	use {
-		'artanikin/vim-synthwave84',
-		config = 'vim.cmd[[colorscheme synthwave84]]'
+		'folke/tokyonight.nvim',
+		config = 'vim.cmd[[colorscheme tokyonight]]'
 	}
 
 	use 'sainnhe/gruvbox-material'
-	use	'folke/tokyonight.nvim'
 
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
