@@ -15,6 +15,7 @@ opt.relativenumber = true
 opt.tabstop = 2
 opt.shiftwidth = 2
 opt.guifont = 'Press Start 2P:h14'
+opt.title = true
 
 -- Keybindings
 local silent = { silent = true, noremap = true }
