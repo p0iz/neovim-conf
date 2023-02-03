@@ -49,8 +49,8 @@ map('t', '<M-Esc>', [[<C-\><C-n>]], silent)
 
 -- Autocommands for buffers
 vim.cmd([[
-	augroup BufferMagic
-		autocmd!
+	augroup MyBufferAutomation
+		autocmd BufEnter * if expand('%:h') != '' | cd %:h | endif
 		autocmd BufEnter * let &titlestring = '[' . expand('%') . ']'
 	augroup end
 ]])
