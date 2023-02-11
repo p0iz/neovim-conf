@@ -19,33 +19,30 @@ opt.title = true
 
 -- Keybindings
 local silent = { silent = true, noremap = true }
-local map = vim.api.nvim_set_keymap
 
 -- Save
-map('n', '<leader>s', '<cmd>w<cr>', silent)
+vim.keymap.set('n', '<leader>s', '<cmd>w<cr>', silent)
 
 -- Fast buffer switching
-map('n', '<c-w>n', '<cmd>bn<cr>', silent)
-map('n', '<c-w>p', '<cmd>bp<cr>', silent)
+vim.keymap.set('n', '<c-w>n', '<cmd>bn<cr>', silent)
+vim.keymap.set('n', '<c-w>p', '<cmd>bp<cr>', silent)
 
 -- Keep selection when indenting in visual mode
-map('v', '<', '<gv', silent)
-map('v', '>', '>gv', silent)
+vim.keymap.set('v', '<', '<gv', silent)
+vim.keymap.set('v', '>', '>gv', silent)
 
 -- Tab movement
-map('n', '<leader>tt', '<cmd>tabnew<cr>', silent)
-map('n', '<leader>tc', '<cmd>tabclose<cr>', silent)
-map('n', '<leader>th', '<cmd>tabpre<cr>', silent)
-map('n', '<leader>tl', '<cmd>tabnext<cr>', silent)
+vim.keymap.set('n', '<leader>tt', '<cmd>tabnew<cr>', silent)
+vim.keymap.set('n', '<leader>tc', '<cmd>tabclose<cr>', silent)
+vim.keymap.set('n', '<leader>th', '<cmd>tabpre<cr>', silent)
+vim.keymap.set('n', '<leader>tl', '<cmd>tabnext<cr>', silent)
 
 -- Fast jump to start/end of line
-map('n', 'H', '^', silent)
-map('v', 'H', '^', silent)
-map('n', 'L', '$', silent)
-map('v', 'L', '$', silent)
+vim.keymap.set({'n', 'v'}, 'H', '^', silent)
+vim.keymap.set({'n', 'v'}, 'L', '$', silent)
 
 -- Escape from terminal
-map('t', '<M-Esc>', [[<C-\><C-n>]], silent)
+vim.keymap.set('t', '<M-Esc>', [[<C-\><C-n>]], silent)
 
 -- Autocommands for buffers
 vim.cmd([[
