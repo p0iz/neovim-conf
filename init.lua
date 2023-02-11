@@ -50,3 +50,6 @@ vim.cmd([[
 		autocmd BufEnter * let &titlestring = '[' . expand('%') . ']'
 	augroup end
 ]])
+
+-- Lazy.nvim setup
+require("lazy_setup").setup("plugins")
