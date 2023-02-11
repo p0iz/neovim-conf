@@ -1,6 +1,10 @@
 local g = vim.g
 local cmd = vim.cmd
 
+-- Disable netrw
+g.loaded_netrw = 1
+g.loaded_netrwPlugin = 1
+
 -- Leader/local leader
 g.mapleader = [[ ]]
 g.maplocalleader = [[,]]
