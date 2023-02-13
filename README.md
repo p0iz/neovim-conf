@@ -11,5 +11,16 @@ Get the "ShureTechMono Nerd Font" from https://www.nerdfonts.com/font-downloads
 ## For Unity projects on Mac
 1. install dotnet and mono (Homebrew).
 2. add to ~/.zprofile:
-	* ```export DOTNET_ROOT=/usr/local/share/dotnet```
-	* ```export FrameworkPathOverride=/opt/homebrew/lib/mono/4.7.1-api```
+```
+export DOTNET_ROOT=/usr/local/share/dotnet
+export FrameworkPathOverride=/opt/homebrew/lib/mono/4.7.1-api
+```
+3. add to ~/.omnisharp/omnisharp.json:
+```
+{
+	"RoslynExtensionOptions": {
+		"enableDecompilationSupport": true
+	}
+}
+```
+
