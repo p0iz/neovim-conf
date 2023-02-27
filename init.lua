@@ -18,7 +18,7 @@ opt.number = true
 opt.relativenumber = true
 opt.tabstop = 2
 opt.shiftwidth = 2
-opt.guifont = 'ShureTechMono Nerd Font:h14'
+opt.guifont = 'ShureTechMono Nerd Font:h16'
 opt.title = true
 
 -- Keybindings
