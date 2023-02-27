@@ -51,7 +51,6 @@ vim.keymap.set('t', '<M-Esc>', [[<C-\><C-n>]], silent)
 -- Autocommands for buffers
 vim.cmd([[
 	function! UpdateBuffer()
-		cd `=expand('%:h')`
 		let &titlestring = '[' . expand('%:p') . ']'
 	endfunction
 	augroup MyBufferAutomation
