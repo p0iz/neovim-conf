@@ -32,15 +32,37 @@ return {
 			vim.keymap.set('n', '<leader>ft', api.tree.toggle, { silent = true })
 		end
 	},
-	{
-		'airblade/vim-rooter'
-	},
+	-- automatocally switch to project/git root directory
+	{ 'airblade/vim-rooter' },
+	-- mkdir - automatically create missing directories on write
+	{ 'jghauser/mkdir.nvim' },
 
 	-- Telescope & co
 	{
 		'nvim-telescope/telescope.nvim',
 		requires = { 'nvim-lua/plenary.nvim' },
 		config = function()
+			require('telescope').setup{
+				defaults = {
+					-- Default configuration for telescope goes here:
+					-- config_key = value,
+					mappings = {
+						i = {
+							-- map actions.which_key to <C-h> (default: <C-/>)
+							-- actions.which_key shows the mappings for your picker,
+							-- e.g. git_{create, delete, ...}_branch for the git_branches picker
+							["<C-h>"] = "which_key"
+						}
+					}
+				},
+				pickers = {
+					-- Default configuration for builtin pickers goes here:
+					find_files = {
+						hidden = true,
+						file_ignore_patterns = { "node_modules", ".git/" }
+					}
+				},
+			}
 			local builtin = require('telescope.builtin')
 			vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
 			vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
