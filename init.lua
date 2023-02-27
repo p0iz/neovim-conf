@@ -48,6 +48,10 @@ vim.keymap.set({'n', 'v'}, 'L', '$', silent)
 -- Escape from terminal
 vim.keymap.set('t', '<M-Esc>', [[<C-\><C-n>]], silent)
 
+-- Common LSP magic
+vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
+vim.keymap.set('n', 'gr', vim.lsp.buf.references)
+
 -- Autocommands for buffers
 vim.cmd([[
 	function! UpdateBuffer()

@@ -61,9 +61,6 @@ return {
 				sdk_include_prereleases = true
 			}
 			require('lspconfig').omnisharp.setup(omnisharp_opts)
-
-			-- Go to definition
-			vim.keymap.set('n', 'gd', require('omnisharp_extended').lsp_definitions)
 		end
 	},
 	-- Rust
