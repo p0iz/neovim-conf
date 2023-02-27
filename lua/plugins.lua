@@ -33,8 +33,13 @@ return {
 		end
 	},
 	{
+		'airblade/vim-rooter'
+	},
+
+	-- Telescope & co
+	{
 		'nvim-telescope/telescope.nvim',
-	  requires = { 'nvim-lua/plenary.nvim'},
+		requires = { 'nvim-lua/plenary.nvim' },
 		config = function()
 			local builtin = require('telescope.builtin')
 			vim.keymap.set('n', '<leader>ff', builtin.find_files, {})
@@ -43,6 +48,15 @@ return {
 			vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 		end
 	},
+	{
+		'cljoly/telescope-repo.nvim',
+		requires = { 'nvim-telescope/telescope.nvim' },
+		config = function()
+			require("telescope").load_extension "repo"
+			vim.keymap.set('n', '<leader>fr', require'telescope'.extensions.repo.list, {})
+		end
+	},
+
 	-- LSP
 	{
 		'neovim/nvim-lspconfig',
